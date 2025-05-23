@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descúbrelo - AquaLens</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00a3e0;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --text-color: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(0,102,204,0.9), rgba(0,163,224,0.9)), url('img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-section {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card p {
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(0,102,204,0.9), rgba(0,163,224,0.9)), url('img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 50vh;
+                background-attachment: scroll;
+                padding: 4rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .info-section {
+                padding: 4rem 1rem;
+            }
+
+            .info-grid {
+                gap: 2rem;
+            }
+
+            .info-card {
+                padding: 2rem;
+            }
+
+            .info-icon {
+                font-size: 2.5rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .info-card p {
+                font-size: 0.95rem;
+            }
+
+            .cta-section {
+                padding: 4rem 1rem;
+                background-attachment: scroll;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+        }
+
+        .discover-section {
+            padding: 8rem 5% 4rem;
+            background: var(--white);
+        }
+
+        .discover-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-discover {
+            text-align: center;
+            margin-bottom: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-discover h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-discover h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .slogan {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .section-content {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .section-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .section-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .section-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(0,163,224,0.8)), url('img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        .highlight-box h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                transform: rotate(45deg) translateX(-100%);
+            }
+            100% {
+                transform: rotate(45deg) translateX(100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .discover-section {
+                padding: 4rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .info-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .info-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .features-section {
+                padding: 4rem 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .cta-section {
+                padding: 4rem 1rem;
+            }
+
+            .cta-content {
+                padding: 0 1rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AquaLens</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="descubrelo.html" class="active">Descúbrelo</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="concurso.html">Concurso</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="discover-section">
+            <div class="discover-content">
+                <div class="hero-discover" data-aos="fade-up">
+                    <h1>Descubre AquaLens</h1>
+                    <p class="slogan">Cada gota cuenta y cada innovación nos acerca a un mundo mejor.</p>
+                    <p>Una solución revolucionaria que transforma la gestión del alcantarillado urbano mediante tecnología inteligente y sostenible.</p>
+                </div>
+
+                <div class="section-content" data-aos="fade-up">
+                    <h2>¿Qué necesidad satisface?</h2>
+                    <p>Nuestra idea es un invento que no se ha propuesto hasta el momento y soluciona un gran problema de las ciudades grandes, como lo son las alcantarillas. En las ciudades las alcantarillas se atascan por culpa de la contaminación humana (basura), o de la propia ciudad como los árboles, que sus hojas caen al suelo y la lluvia las arrastra a las alcantarillas.</p>
+                    <p>Eso crea un atasco en las alcantarillas y tienen que ser limpiadas regularmente. Nuestro invento está destinado al ayuntamiento de cada localidad, generando una gran importancia para el destinatario potencial como por ejemplo; las ciudades, creando una solución a la mayoría de los problemas de limpieza y la necesidad de menos personal.</p>
+                    
+                    <div class="highlight-box" data-aos="zoom-in">
+                        <h3>Impacto Económico</h3>
+                        <p>El mal uso del saneamiento y los atascos en las redes de alcantarillado suponen para la ciudad de Alicante un coste de más de 2M € al año, y por eso hemos desarrollado este invento.</p>
+                    </div>
+                </div>
+
+                <div class="section-content" data-aos="fade-up">
+                    <h2>Nuestra Solución</h2>
+                    <p>Para solucionar este problema hemos desarrollado AquaLens, un sistema de monitorización de agua en tiempo real para evitar atascos o mal filtrado del agua en las alcantarillas. Este problema lo hemos resuelto utilizando un ESP32 y sensores avanzados para medir la calidad del agua.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card" data-aos="fade-up">
+                            <i class="fas fa-microchip"></i>
+                            <h3>ESP32</h3>
+                            <p>Tecnología de última generación</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-tint"></i>
+                            <h3>Análisis en Tiempo Real</h3>
+                            <p>Monitorización continua</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Sostenible</h3>
+                            <p>Materiales reciclados</p>
+                        </div>
+                    </div>
+
+                    <p>Gracias a datos que hemos obtenido de la OMS (Organización Mundial de la Salud) hemos podido saber cuántos PPM deben de haber en el agua, para considerarse limpia y cuando está lo suficientemente sucia como para limpiar la alcantarilla. Los resultados del primer testeo han sido satisfactorios y los datos obtenidos han sido fieles a la realidad, demostrando que nuestro código funciona correctamente.</p>
+                </div>
+
+                <div class="section-content" data-aos="fade-up">
+                    <h2>Beneficios de AquaLens</h2>
+                    <p>Nuestra propuesta beneficia directamente al ayuntamiento y al servicio de limpieza de la ciudad, reduciendo el trabajo innecesario de revisión constante de alcantarillas. Nuestro invento se instala en las alcantarillas haciendo un contacto constante con el agua y analizando el nivel de turbidez de esta.</p>
+                    
+                    <div class="highlight-box" data-aos="zoom-in">
+                        <h3>Monitoreo Inteligente</h3>
+                        <p>Cuando el nivel de turbidez del agua suba debido a la lluvia o cualquier otro factor, el aparato estaría detectando constantemente el agua que entra. Si el nivel de turbidez del agua se ha elevado significativamente, enviará un mensaje a la central para poder limpiar la alcantarilla correspondiente.</p>
+                    </div>
+
+                    <p>Esto mejora significativamente el método anterior de limpieza de las alcantarillas, ya que, anteriormente, se hacía un control rutinario de las alcantarillas. Gracias a AquaLens, ese trabajo se vuelve innecesario y solo es necesario revisar las alcantarillas cuando están lo suficientemente sucias u obstruidas.</p>
+                </div>
+
+                <div class="section-content" data-aos="fade-up">
+                    <h2>Nuestros Colaboradores</h2>
+                    <p>Para llevar a cabo este proyecto, es fundamental contar con la colaboración de distintos agentes que puedan contribuir al desarrollo y aplicación de nuestro producto. En primer lugar, estableceremos contacto con proveedores que nos ofrezcan los componentes necesarios a precios accesibles asegurando la viabilidad económica del proyecto.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card" data-aos="fade-up">
+                            <i class="fas fa-building"></i>
+                            <h3>Ayuntamientos</h3>
+                            <p>Implementación urbana</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-industry"></i>
+                            <h3>Proveedores</h3>
+                            <p>Componentes de calidad</p>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-users"></i>
+                            <h3>Expertos</h3>
+                            <p>Asesoramiento técnico</p>
+                        </div>
+                    </div>
+
+                    <p>Nuestros aliados desempeñarán un papel clave en la identificación de los lugares adecuados para la instalación del producto, especialmente en alcantarillas y sistemas de drenaje urbano. Su apoyo permitirá que nuestra solución tenga un impacto positivo en la gestión del agua y el saneamiento.</p>
+                    <p>Además, trabajaremos con expertos en ingeniería y sostenibilidad para optimizar el diseño y garantizar su funcionalidad a largo plazo. Todo esto nos permitirá llevar a cabo el uso de AquaLens en ciudades de manera eficiente y efectiva.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AquaLens</h3>
+                <p>Soluciones inteligentes para el futuro del alcantarillado urbano</p>
+                <p class="footer-slogan">Cada gota cuenta y cada innovación nos acerca a un mundo mejor.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>aqualens.proyect@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aqualens_proyect/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado por <a href="https://github.com/AlvaroFernandez-f" target="_blank">Álvaro Fernández</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

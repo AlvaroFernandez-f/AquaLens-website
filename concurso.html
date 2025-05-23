@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concurso - AquaLens</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .contest-section {
+            padding: 8rem 5% 4rem;
+            background: var(--white);
+        }
+
+        .contest-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contest-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contest-header h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contest-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .contest-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .contest-info {
+            padding: 2rem;
+        }
+
+        .contest-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .contest-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contest-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contest-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .achievements {
+            margin-top: 4rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(0,163,224,0.8)), url('img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            color: var(--white);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-card i {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card p {
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .timeline {
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: calc(50% - 2rem);
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -60px;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contest-section {
+                padding: 4rem 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2rem;
+                padding: 0 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .contest-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .contest-card {
+                padding: 1.5rem;
+            }
+
+            .contest-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .contest-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .contest-card p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .contest-description {
+                padding: 4rem 1rem;
+            }
+
+            .contest-description h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .contest-description p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .logos-section {
+                padding: 4rem 1rem;
+            }
+
+            .logos-section h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .logos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .logo-card {
+                padding: 1rem;
+            }
+
+            .logo-card img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .contests-logos {
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        .contests-logos h2 {
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .logo-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .logo-card p {
+            color: var(--text-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AquaLens</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="descubrelo.html">Descúbrelo</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="concurso.html" class="active">Concurso</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contest-section">
+            <div class="contest-container">
+                <div class="contest-header" data-aos="fade-up">
+                    <h1>Nuestra Participación en el Concurso</h1>
+                    <p>Innovación y sostenibilidad para el futuro del alcantarillado urbano</p>
+                </div>
+
+                <div class="contest-content">
+                    <div class="contest-info" data-aos="fade-right">
+                        <h2>El Proyecto</h2>
+                        <p>AquaLens nació como una solución innovadora para abordar uno de los problemas más comunes en las ciudades modernas: la gestión eficiente del alcantarillado. Nuestro sistema de monitorización en tiempo real ha sido desarrollado pensando en la sostenibilidad y la eficiencia.</p>
+                        <p>El proyecto ha sido reconocido por su potencial para reducir significativamente los costes de mantenimiento y mejorar la calidad del servicio en las ciudades.</p>
+                    </div>
+                    <div class="contest-image" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Proyecto AquaLens">
+                    </div>
+                </div>
+
+                <div class="achievements" data-aos="fade-up">
+                    <h2>Logros y Reconocimientos</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <i class="fas fa-award"></i>
+                            <h3>The Challenge by EduCaixa</h3>
+                            <p>Seleccionados para participar en el campus formativo de EduCaixa</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Análisis de Calidad</h3>
+                            <p>Sistema avanzado de detección de partículas en el agua</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-microchip"></i>
+                            <h3>Tecnología ESP32</h3>
+                            <p>Control y monitorización mediante microcontrolador ESP32</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline" data-aos="fade-up">
+                    <h2>Línea de Tiempo</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Fase Inicial</h3>
+                            <p>Desarrollo del concepto y diseño del prototipo</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Pruebas de Campo</h3>
+                            <p>Implementación y pruebas en condiciones reales</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Presentación del Proyecto</h3>
+                            <p>Exposición en el concurso y obtención de reconocimientos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contests-logos" data-aos="fade-up">
+                    <h2>Concursos en los que hemos participado</h2>
+                    <div class="logos-grid">
+                        <div class="logo-card">
+                            <img src="img/educaixa.png" alt="Logo EduCaixa">
+                            <h3>The Challenge by EduCaixa</h3>
+                            <p>Seleccionados para participar en el campus formativo</p>
+                        </div>
+                        <!-- Aquí puedes añadir más logos de concursos -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AquaLens</h3>
+                <p>Soluciones inteligentes para el futuro del alcantarillado urbano</p>
+                <p class="footer-slogan">Cada gota cuenta y cada innovación nos acerca a un mundo mejor.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>aqualens.proyect@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aqualens_proyect/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado por <a href="https://github.com/AlvaroFernandez-f" target="_blank">Álvaro Fernández</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

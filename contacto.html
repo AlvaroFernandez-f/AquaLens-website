@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - AquaLens</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .contact-section {
+            padding: 8rem 5% 4rem;
+            background: var(--light-bg);
+            min-height: 100vh;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 4rem 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+
+            .contact-info h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .contact-info p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-details {
+                gap: 1rem;
+            }
+
+            .contact-item {
+                padding: 1rem;
+            }
+
+            .contact-item i {
+                font-size: 1.5rem;
+            }
+
+            .contact-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .contact-item p {
+                font-size: 0.95rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .contact-form h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            .map-section {
+                padding: 4rem 1rem;
+            }
+
+            .map-section h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .map-container {
+                height: 300px;
+                border-radius: 15px;
+            }
+        }
+
+        .contact-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 102, 204, 0.05);
+            border-radius: 10px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .highlight-item i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-highlights {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .highlight-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .highlight-item i {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AquaLens</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="descubrelo.html">Descúbrelo</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="concurso.html">Concurso</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Contacta con Nosotros</h2>
+                    <p>¿Tienes alguna pregunta o quieres saber más sobre AquaLens? No dudes en contactarnos.</p>
+                    
+                    <div class="contact-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Respuesta en 24 horas</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-comments"></i>
+                            <p>Atención personalizada</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Datos seguros</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Ubicación</h3>
+                                <p>Vitoria-Gasteiz, España</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>aqualens.proyect@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contactForm" onsubmit="return sendEmail(event)">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AquaLens</h3>
+                <p>Soluciones inteligentes para el futuro del alcantarillado urbano</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: aqualens.proyect@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aqualens_proyect/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado por <a href="https://github.com/AlvaroFernandez-f" target="_blank">Álvaro Fernández</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function sendEmail(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Construir el cuerpo del correo
+            const body = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMensaje:%0D%0A${message}`;
+            
+            // Construir la URL de Gmail
+            const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=aqualens.proyect@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
+            
+            // Abrir Gmail en una nueva pestaña
+            window.open(mailtoLink, '_blank');
+            
+            // Limpiar el formulario
+            document.getElementById('contactForm').reset();
+            
+            return false;
+        }
+    </script>
+</body>
+</html> 
