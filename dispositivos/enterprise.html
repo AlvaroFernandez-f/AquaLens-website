@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaLens Enterprise - AquaLens</title>
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .device-section {
+            padding: 8rem 5% 4rem;
+            background: var(--white);
+        }
+
+        .device-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .device-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .device-header h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .device-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .device-info {
+            padding: 2rem;
+        }
+
+        .device-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .device-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .device-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .device-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .spec-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .spec-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .spec-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .spec-card p {
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .features-list {
+            margin-top: 2rem;
+        }
+
+        .features-list h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .features-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .device-section {
+                padding: 4rem 1rem;
+            }
+
+            .device-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .device-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .device-image {
+                height: 300px;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AquaLens</h1>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../descubrelo.html">Descúbrelo</a>
+            <a href="../equipo.html">Equipo</a>
+            <a href="../concurso.html">Concurso</a>
+            <a href="../solucion.html">Nuestra Solución</a>
+            <a href="../contacto.html">Contacto</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="device-section">
+            <div class="device-container">
+                <div class="device-header" data-aos="fade-up">
+                    <h1>AquaLens Enterprise</h1>
+                    <p>La solución completa para la gestión del alcantarillado en empresas</p>
+                </div>
+
+                <div class="device-content">
+                    <div class="device-info" data-aos="fade-right">
+                        <h2>Descripción General</h2>
+                        <p>AquaLens Enterprise es nuestra solución más avanzada, diseñada específicamente para empresas que requieren un control exhaustivo de sus sistemas de alcantarillado. Con capacidad para gestionar hasta 15 dispositivos simultáneamente, esta versión ofrece un control total y una monitorización en tiempo real de todos los puntos críticos de su infraestructura.</p>
+                        
+                        <div class="features-list">
+                            <h3>Características Principales</h3>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Gestión centralizada de hasta 15 dispositivos</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-desktop"></i>
+                                    <span>Panel de control avanzado con visualización en tiempo real</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-database"></i>
+                                    <span>Almacenamiento local en centralita con capacidad de 1TB</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Análisis predictivo y generación de informes personalizados</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-bell"></i>
+                                    <span>Sistema de alertas avanzado con notificaciones personalizables</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Seguridad mejorada al mantener los datos en local</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="device-image" data-aos="fade-left">
+                        <img src="../img/enterprise-device.jpg" alt="AquaLens Enterprise">
+                    </div>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-card" data-aos="fade-up">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Hardware</h3>
+                        <p>Procesador ESP32 de alta potencia, sensores de última generación, carcasa IP68 resistente a condiciones extremas.</p>
+                    </div>
+                    <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-wifi"></i>
+                        <h3>Conectividad</h3>
+                        <p>WiFi 2.4GHz, Ethernet, Bluetooth 5.0, protocolos de comunicación seguros y encriptados. Conexión local sin dependencia de internet.</p>
+                    </div>
+                    <div class="spec-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Seguridad</h3>
+                        <p>Encriptación de datos, autenticación de dos factores, actualizaciones de seguridad automáticas. Protección total al mantener los datos en local.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AquaLens</h3>
+                <p>Soluciones inteligentes para el futuro del alcantarillado urbano</p>
+                <p class="footer-slogan">Cada gota cuenta y cada innovación nos acerca a un mundo mejor.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: aqualens.proyect@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aqualens_proyect/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado por <a href="https://github.com/AlvaroFernandez-f" target="_blank">Álvaro Fernández</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/error-handler.js"></script>
+</body>
+</html> 
