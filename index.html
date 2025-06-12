@@ -58,12 +58,13 @@
 
         .hero {
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(0,163,224,0.8)), url('img/hero.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            display: flex;
-            align-items: center;
             position: relative;
             overflow: hidden;
             padding: 2rem 0;
@@ -80,13 +81,102 @@
         }
 
         .hero-content {
-            max-width: 100%;
-            margin: 0;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
             text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            z-index: 2;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .hero-bubbles {
+            position: absolute;
             width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: rise 10s infinite ease-in;
+        }
+
+        .hero-bubble:nth-child(1) {
+            width: 40px;
+            height: 40px;
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .hero-bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        .hero-bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 35%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+
+        .hero-bubble:nth-child(4) {
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            animation-duration: 11s;
+            animation-delay: 0s;
+        }
+
+        .hero-bubble:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            left: 65%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        .hero-bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            left: 80%;
+            animation-duration: 9s;
+            animation-delay: 2s;
+        }
+
+        .hero-bubble:nth-child(7) {
+            width: 25px;
+            height: 25px;
+            left: 90%;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
         }
 
         .hero h1 {
@@ -589,6 +679,7 @@
             <a href="descubrelo.html">Descúbrelo</a>
             <a href="equipo.html">Equipo</a>
             <a href="concurso.html">Concurso</a>
+            <a href="solucion.html">Nuestra Solución</a>
             <a href="contacto.html">Contacto</a>
         </div>
         <div class="menu-btn">
@@ -598,6 +689,15 @@
 
     <main>
         <section class="hero">
+            <div class="hero-bubbles">
+                <div class="hero-bubble"></div>
+                <div class="hero-bubble"></div>
+                <div class="hero-bubble"></div>
+                <div class="hero-bubble"></div>
+                <div class="hero-bubble"></div>
+                <div class="hero-bubble"></div>
+                <div class="hero-bubble"></div>
+            </div>
             <div class="hero-content" data-aos="fade-up">
                 <h1>AquaLens</h1>
                 <div class="hero-buttons">
@@ -691,5 +791,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/error-handler.js"></script>
 </body>
 </html> 
