@@ -173,29 +173,20 @@
         }
 
         .features-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            flex-wrap: wrap;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 3rem 2rem;
             border-radius: 20px;
-            text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: var(--transition);
             position: relative;
-            overflow: hidden;
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
+            transition: var(--transition);
+            text-align: center;
         }
 
         .feature-card::before {
@@ -228,50 +219,6 @@
             color: var(--text-color);
             opacity: 0.8;
             line-height: 1.8;
-        }
-
-        .stats-section {
-            padding: 8rem 2rem;
-            background: linear-gradient(135deg, rgba(0,102,204,0.8), rgba(0,163,224,0.8)), url('img/hero.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-            max-width: 100%;
-            margin: 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            max-width: 100%;
-            margin: 0;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .stat-card p {
-            font-size: 1.2rem;
-            opacity: 0.9;
         }
 
         .testimonials {
@@ -466,34 +413,6 @@
                 font-size: 1rem;
                 max-width: 600px;
                 margin: 0 auto;
-            }
-
-            .stats-section {
-                padding: 4rem 1rem;
-                background-attachment: scroll;
-            }
-
-            .stats-grid {
-                gap: 1.5rem;
-                padding: 0 1rem;
-            }
-
-            .stat-card {
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            }
-
-            .cta-content p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             }
 
             .testimonials {
@@ -708,23 +627,6 @@
                     <i class="fas fa-leaf feature-icon"></i>
                     <h3>Sostenibilidad</h3>
                     <p>Reducción de emisiones y uso de materiales reciclados para un futuro más verde.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card" data-aos="fade-up">
-                    <div class="stat-number">2M€</div>
-                    <p>Ahorro anual en mantenimiento</p>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number">100%</div>
-                    <p>Precisión en detección</p>
-                </div>
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-number">24/7</div>
-                    <p>Monitoreo continuo</p>
                 </div>
             </div>
         </section>
