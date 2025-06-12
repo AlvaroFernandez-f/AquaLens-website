@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Solución - AquaLens</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .solutions-section {
+            padding: 8rem 5% 4rem;
+            background: var(--white);
+        }
+
+        .solutions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .solutions-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .solutions-header h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .solution-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .solution-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .solution-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-type {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .solution-features {
+            padding: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .solution-cta {
+            padding: 2rem;
+            text-align: center;
+            background: var(--light-bg);
+        }
+
+        .solution-cta .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .solution-cta .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .solutions-section {
+                padding: 4rem 1rem;
+            }
+
+            .solutions-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solution-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AquaLens</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="descubrelo.html">Descúbrelo</a>
+            <a href="equipo.html">Equipo</a>
+            <a href="concurso.html">Concurso</a>
+            <a href="solucion.html" class="active">Nuestra Solución</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="solutions-section">
+            <div class="solutions-container">
+                <div class="solutions-header" data-aos="fade-up">
+                    <h1>Nuestra Solución</h1>
+                    <p>Adaptada a tus necesidades específicas</p>
+                </div>
+
+                <div class="solutions-grid">
+                    <div class="solution-card" data-aos="fade-up">
+                        <div class="solution-header">
+                            <h2>Enterprise</h2>
+                            <p class="solution-type">Para empresas</p>
+                        </div>
+                        <div class="solution-features">
+                            <ul class="feature-list">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Hasta 15 dispositivos</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Centralita de previsualización y almacenamiento de datos</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Acceso mediante pantalla externa o conexión wifi</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Panel de control avanzado</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Soporte técnico prioritario</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="solution-cta">
+                            <a href="dispositivos/enterprise.html" class="cta-button">Ver detalles</a>
+                        </div>
+                    </div>
+
+                    <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="solution-header">
+                            <h2>Particulares</h2>
+                            <p class="solution-type">Para casas, comunidades de vecinos y pequeños recintos</p>
+                        </div>
+                        <div class="solution-features">
+                            <ul class="feature-list">
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Hasta 3 dispositivos</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Control desde dispositivo móvil</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Informes de estado</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Interfaz intuitiva</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-check"></i>
+                                    <span>Soporte técnico básico</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="solution-cta">
+                            <a href="dispositivos/particulares.html" class="cta-button">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AquaLens</h3>
+                <p>Soluciones inteligentes para el futuro del alcantarillado urbano</p>
+                <p class="footer-slogan">Cada gota cuenta y cada innovación nos acerca a un mundo mejor.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: aqualens.proyect@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aqualens_proyect/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado por <a href="https://github.com/AlvaroFernandez-f" target="_blank">Álvaro Fernández</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/error-handler.js"></script>
+</body>
+</html> 
