@@ -41,6 +41,18 @@ body {
     z-index: 1000;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
 .logo h1 {
     color: var(--primary-color);
     font-size: 1.8rem;
