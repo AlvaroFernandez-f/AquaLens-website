@@ -318,11 +318,10 @@
             // Construir el cuerpo del correo
             const body = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMensaje:%0D%0A${message}`;
             
-            // Construir la URL de Gmail
-            const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=aqualens.proyect@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`;
+            // Usar mailto para compatibilidad universal
+            const mailtoLink = `mailto:aqualens.proyect@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
             
-            // Abrir Gmail en una nueva pestaña
-            window.open(mailtoLink, '_blank');
+            window.location.href = mailtoLink;
             
             // Limpiar el formulario
             document.getElementById('contactForm').reset();
