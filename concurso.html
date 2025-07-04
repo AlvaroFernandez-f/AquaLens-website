@@ -184,84 +184,48 @@
         }
 
         @media (max-width: 768px) {
-            .contest-section {
-                padding: 4rem 1rem;
+            .contest-content {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2rem !important;
             }
-
-            .section-header {
-                margin-bottom: 2rem;
-                padding: 0 1rem;
+            .contest-info, .contest-image {
+                padding: 0 !important;
             }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .section-header p {
-                font-size: 1rem;
-            }
-
-            .contest-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0 1rem;
-            }
-
-            .contest-card {
-                padding: 1.5rem;
-            }
-
-            .contest-icon {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .contest-card h3 {
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .contest-card p {
-                font-size: 0.95rem;
-                line-height: 1.6;
-            }
-
-            .contest-description {
-                padding: 4rem 1rem;
-            }
-
-            .contest-description h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            .contest-description p {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-
-            .logos-section {
-                padding: 4rem 1rem;
-            }
-
-            .logos-section h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            .logos-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 0 1rem;
-            }
-
-            .logo-card {
-                padding: 1rem;
-            }
-
-            .logo-card img {
+            .contest-image img {
                 max-width: 100%;
                 height: auto;
+                border-radius: 10px;
+                margin: 0 auto;
+                display: block;
+            }
+            .achievements-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            .timeline::before {
+                left: 10px !important;
+                width: 2px !important;
+            }
+            .timeline-content {
+                width: 100% !important;
+                margin-left: 30px !important;
+                margin-right: 0 !important;
+                padding: 1.2rem !important;
+            }
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 30px !important;
+                margin-right: 0 !important;
+            }
+            .timeline-content::before {
+                left: -30px !important;
+                right: auto !important;
+            }
+            .contest-header {
+                margin-bottom: 2rem !important;
+            }
+            .contest-section {
+                padding: 4rem 0.5rem !important;
             }
         }
 
